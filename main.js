@@ -14,14 +14,7 @@ document.addEventListener("DOMContentLoaded", () =>  {
 	const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
     camera.position.set(1, 1, 5);
 
-    const renderer = new THREE.WebGLRenderer({alpha: true});
-    renderer.setSize(600, 600);
-    renderer.domElement.style.position = "absolute";
-    renderer.domElement.style.top = "0";
-    renderer.domElement.style.left = "0";
-    document.body.appendChild(renderer.domElement);
-
-    // Set up video
+	 // Set up video
     const video = document.createElement("video");
     video.autoplay = true;
     video.muted = true;
@@ -33,6 +26,14 @@ document.addEventListener("DOMContentLoaded", () =>  {
     video.height = 600;
 
     document.body.appendChild(video);
+
+    const renderer = new THREE.WebGLRenderer({alpha: true});
+    renderer.setSize(600, 600);
+    renderer.domElement.style.position = "absolute";
+    renderer.domElement.style.top = "0";
+    renderer.domElement.style.left = "0";
+    document.body.appendChild(renderer.domElement);
+
 
     // Request camera
     if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
@@ -53,3 +54,4 @@ document.addEventListener("DOMContentLoaded", () =>  {
     }
     animate();
 });
+
