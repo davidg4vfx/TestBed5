@@ -39,7 +39,8 @@ document.addEventListener("DOMContentLoaded", () =>  {
     // Request camera
      if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
         navigator.mediaDevices.getUserMedia({
-            video: { facingMode: "environment" }
+        //    video: { facingMode: "environment" }
+		video: { facingMode: { exact: "environment" } }
         }).then((stream) => {
             video.srcObject = stream;
         }).catch((err) => {
@@ -57,6 +58,7 @@ document.addEventListener("DOMContentLoaded", () =>  {
     }
     animate();
 });
+
 
 
 
