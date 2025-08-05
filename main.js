@@ -27,10 +27,11 @@ document.addEventListener("DOMContentLoaded", () =>  {
 	
 	video.style.position = "absolute";
 	video.style.width = renderer.domElement.width;
-	video.style.width = renderer.domElement.height;
+	video.style.height = renderer.domElement.height;
 	
 	renderer.domElement.style.position = "absolute";
 	document.body.appendChild(video);
 	document.body.appendChild(renderer.domElement);
 });
+
 
