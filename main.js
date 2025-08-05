@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", () =>  {
     renderer.domElement.style.position = "absolute";
     renderer.domElement.style.top = "0";
     renderer.domElement.style.left = "0";
+    renderer.domElement.style.background = "transparent"; // optional
     document.body.appendChild(renderer.domElement);
 
 
@@ -54,4 +55,5 @@ document.addEventListener("DOMContentLoaded", () =>  {
     }
     animate();
 });
+
 
