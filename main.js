@@ -37,8 +37,10 @@ document.addEventListener("DOMContentLoaded", () =>  {
 
 
     // Request camera
-    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-        navigator.mediaDevices.getUserMedia({video: true}).then((stream) => {
+     if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+        navigator.mediaDevices.getUserMedia({
+            video: { facingMode: "environment" }
+        }).then((stream) => {
             video.srcObject = stream;
         }).catch((err) => {
             alert("Camera access denied or unavailable.");
@@ -55,5 +57,6 @@ document.addEventListener("DOMContentLoaded", () =>  {
     }
     animate();
 });
+
 
 
