@@ -43,6 +43,9 @@ document.addEventListener("DOMContentLoaded", () =>  {
 		video: { facingMode: { exact: "environment" } }
         }).then((stream) => {
             video.srcObject = stream;
+			    window.addEventListener("beforeunload", () => {
+        stream.getTracks().forEach(track => track.stop());
+    });
         }).catch((err) => {
             alert("Camera access denied or unavailable.");
         });
@@ -58,6 +61,7 @@ document.addEventListener("DOMContentLoaded", () =>  {
     }
     animate();
 });
+
 
 
 
