@@ -43,6 +43,7 @@ document.addEventListener("DOMContentLoaded", () =>  {
 		video: { facingMode: { exact: "environment" } }
         }).then((stream) => {
             video.srcObject = stream;
+			video.play().catch(err => console.error("Video play error:", err));
 			    window.addEventListener("beforeunload", () => {
         stream.getTracks().forEach(track => track.stop());
     });
@@ -61,6 +62,7 @@ document.addEventListener("DOMContentLoaded", () =>  {
     }
     animate();
 });
+
 
 
 
